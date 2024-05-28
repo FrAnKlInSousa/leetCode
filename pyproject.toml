@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "leetcode"
+version = "0.1.0"
+description = ""
+authors = ["Franklin"]
+
+[tool.poetry.dependencies]
+python = "^3.11.4"
+pytest = "^8.2.1"
+setuptools = "^70.0.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.1"
