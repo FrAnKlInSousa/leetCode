@@ -28,7 +28,10 @@ def solution_02(matrix: List[List[int]]) -> bool:
             return False
     return True
 
+
 def solution_03(matrix: List[List[int]]) -> bool:
     matrix_len = len(matrix)
-    return not any(matrix_len != len(set(row)) or matrix_len != len(set(col))
-    for row, col in zip(matrix, zip(*matrix)))
+    return not any(
+        matrix_len != len(set(row)) or matrix_len != len(set(col))
+        for row, col in zip(matrix, zip(*matrix))
+    )
