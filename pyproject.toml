@@ -2,15 +2,40 @@
 name = "leetcode"
 version = "0.1.0"
 description = ""
-authors = ["Franklin"]
+authors = ["franklin <frank.fkn.23@gmail.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11.4"
-pytest = "^8.2.1"
-setuptools = "^70.0.0"
-pre-commit = "3.7.1"
+python = "^3.12"
 
 
-[tool.poetry.group.test.dependencies]
-pytest = "^8.2.1"
-ruff = "^0.4.5"
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.10"
+taskipy = "^1.13.0"
+pytest = "^8.2.2"
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+preview = true
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = '-p no:warnings'
+
+[tool.taskipy.tasks]
+pre_test = 'task lint'
+test = 'pytest -s -x -vv'
+post_test = 'coverage html'
+lint = 'ruff check . --diff'
+format = 'ruff check . --fix ; ruff format .'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
