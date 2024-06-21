@@ -1,7 +1,7 @@
 from typing import List
 
 
-def solution_01(matrix: List[List[int]]) -> bool:
+def check_row_and_col_01(matrix: List[List[int]]) -> bool:
     row_len = len(matrix[0])
 
     for index_row, row in enumerate(matrix):
@@ -21,7 +21,7 @@ def solution_01(matrix: List[List[int]]) -> bool:
     return True
 
 
-def solution_02(matrix: List[List[int]]) -> bool:
+def check_row_and_col_02(matrix: List[List[int]]) -> bool:
     matrix_len = len(matrix)
     for row, col in zip(matrix, zip(*matrix)):
         if len(set(row)) != matrix_len or len(set(col)) != matrix_len:
@@ -29,7 +29,7 @@ def solution_02(matrix: List[List[int]]) -> bool:
     return True
 
 
-def solution_03(matrix: List[List[int]]) -> bool:
+def check_row_and_col_03(matrix: List[List[int]]) -> bool:
     matrix_len = len(matrix)
     return not any(
         matrix_len != len(set(row)) or matrix_len != len(set(col))

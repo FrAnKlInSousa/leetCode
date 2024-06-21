@@ -1,9 +1,9 @@
 import pytest
 
 from leetcode.row_and_column_contain_all_num import (
-    solution_01,
-    solution_02,
-    solution_03,
+    check_row_and_col_01,
+    check_row_and_col_02,
+    check_row_and_col_03,
 )
 
 """
@@ -25,8 +25,8 @@ the matrix is valid. Otherwise, return false.
         ([[1, 2, 3], [3, 1, 2], [2, 3, 1]], True),
     ],
 )
-def test_check_row_and_col_v01(matrix, expected):
-    result = solution_01(matrix)
+def test_check_row_and_col_01(matrix, expected):
+    result = check_row_and_col_01(matrix)
     assert result == expected
 
 
@@ -38,7 +38,7 @@ def test_check_row_and_col_v01(matrix, expected):
     ],
 )
 def test_check_row_and_col_v02(matrix, expected):
-    result = solution_02(matrix)
+    result = check_row_and_col_02(matrix)
     assert result == expected
 
 
@@ -50,5 +50,5 @@ def test_check_row_and_col_v02(matrix, expected):
     ],
 )
 def test_check_row_and_col_v03(matrix, expected):
-    result = solution_03(matrix)
+    result = check_row_and_col_03(matrix)
     assert result == expected
