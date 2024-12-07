@@ -27,12 +27,9 @@ class Solution:
 
         for _ in heights:
             distance = right - left
-            area = (
-                distance * heights[left]
-                if heights[left] < heights[right]
-                else distance * heights[right]
-            )
 
+            # defining the area based on smallest column
+            area = min(heights[left], heights[right]) * distance
             if area > max_area:
                 max_area = area
             if heights[left] < heights[right]:
